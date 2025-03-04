@@ -30,7 +30,7 @@ export default function SignInForm () {
         e.preventDefault()
 
         if(otp === "123456" && phone) {
-            return <Link href="/complete-profile" />
+            window.location.href = "/complete-profile"
         } else {
             toast.error("Código OTP Errado", {
                 //description: "Sunday, December 03, 2023 at 9:00 AM",

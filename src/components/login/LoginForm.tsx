@@ -11,15 +11,13 @@ export default function LoginForm () {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
-    console.log('Email:', email) 
-    console.log('Password:', password)
+   
     if(email === "aldprogramer@gmail.com" && password === "123456") {
         // Redirecionar para a dashboard
-        <Link href="/dashboard" />
+         window.location.href = "/dashboard"
 
         } else {
             toast.error("Dados de acesso inválidos", {
-                //description: "Sunday, December 03, 2023 at 9:00 AM",
                 className: "b-red-600",
                 action: {
                   label: "X",
