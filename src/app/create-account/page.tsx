@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   };
 export default function CreateAccount () {
   return (
-    <section className="flex justify-center items-center w-full h-full text-[#474747] text-sm">
+    <section className="flex content-center w-full h-full text-[#474747] text-sm">
 
         <div className="flex justify-center items-center flex-col w-full h-full">
             <div className="text-end font-bold text-2xl mb-10">
@@ -22,7 +22,11 @@ export default function CreateAccount () {
             
             <SignInForm />
 
-            <Link href="/login" className="text-blue-700 text-center p-10 flex w-72 mt-4">Voltar ao Login</Link>
+            <div className="justify-center items-center text-center p-10 flex w-72 ">
+                <Link href="/login" className="text-blue-600 hover:underline">
+                    Voltar ao Login
+                </Link>
+            </div>
         </div>
     </section>
   ) 

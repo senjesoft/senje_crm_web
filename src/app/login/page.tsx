@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Login () {
   return (
     <section className="flex justify-between items-center w-full h-full text-[#474747] text-sm">
-         <div className="flex bg-red-800 w-screen h-screen">
+         <div className="flex bg-blue-600 w-screen h-screen">
             <Image src={"/loginbanner.jpg"} alt="Banner Login Senje CRM" width={700} height={100} />
         </div>
 
@@ -26,7 +26,7 @@ export default function Login () {
             <LoginForm />
 
             <p className="mt-10">Ainda não tem conta?</p>
-            <Link href="/create-account" className="text-blue-700">Cria conta</Link>
+            <Link href="/create-account" className="text-blue-600">Cria conta</Link>
         </div>
     </section>
   ) 

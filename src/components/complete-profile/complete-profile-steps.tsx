@@ -8,7 +8,7 @@ export default function CompleteProfileSteps () {
     const [step, setStep] = useState(1);
 
     function accessAccount () {
-       window.location.href = "/dashboard"
+       window.location.href = "/app/dashboard"
     }
 
 
@@ -21,7 +21,7 @@ export default function CompleteProfileSteps () {
         
         {step === 1 && (
            <div className="flex p-20 items-start flex-col w-[50%] h-full">
-           <p className="bg-red-800 p-1 px-3 rounded-full text-white font-semibold mb-6">Pass 1 de 4</p>
+           <p className="bg-blue-600 p-1 px-3 rounded-full text-white font-semibold mb-6">Passo 1 de 4</p>
 
            <h2 className="text-xl font-semibold mb-2">Qual é a sua experiência com CRM?</h2>
 
@@ -54,7 +54,7 @@ export default function CompleteProfileSteps () {
            
            <button
            onClick={() => setStep(2)}
-           className="bg-red-700 hover:bg-red-800 text-white font-semibold cursor-pointer rounded-md w-full h-10 mt-6">
+           className="bg-blue-600 hover:bg-blue-700 text-white font-semibold cursor-pointer rounded-md w-full h-10 mt-6">
                Continuar
            </button>
        </div>
@@ -62,7 +62,7 @@ export default function CompleteProfileSteps () {
 
         {step === 2 && (
            <div className="flex p-20 items-start flex-col w-[50%] h-full">
-           <p className="bg-red-800 p-1 px-3 rounded-full text-white font-semibold mb-6">Pass 2 de 4</p>
+           <p className="bg-blue-600 p-1 px-3 rounded-full text-white font-semibold mb-6">Passo 2 de 4</p>
 
            <h2 className="text-xl font-semibold mb-2">Qual é ramo de actuação da sua empresa</h2>
            <select className="w-full h-10 border border-gray-300 rounded-md px-2">
@@ -86,13 +86,13 @@ export default function CompleteProfileSteps () {
            <div className="flex gap-10 w-full justify-between">
                 <button
                 onClick={() => setStep(1)}
-                className="text-red-700 border-red-800 border-2 font-semibold cursor-pointer rounded-md w-full h-10 mt-6">
+                className="text-blue-600 border-blue-700 border-2 font-semibold cursor-pointer rounded-md w-full h-10 mt-6">
                     Voltar
                 </button>
 
                 <button
                 onClick={() => setStep(3)}
-                className="bg-red-700 hover:bg-red-800 text-white font-semibold cursor-pointer rounded-md w-full h-10 mt-6">
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold cursor-pointer rounded-md w-full h-10 mt-6">
                     Continuar
                 </button>
            </div>
@@ -101,7 +101,7 @@ export default function CompleteProfileSteps () {
 
         {step === 3 && (
            <div className="flex p-20 items-start flex-col w-[50%] h-full">
-           <p className="bg-red-800 p-1 px-3 rounded-full text-white font-semibold mb-6">Pass 3 de 4</p>
+           <p className="bg-blue-600 p-1 px-3 rounded-full text-white font-semibold mb-6">Passo 3 de 4</p>
 
            <h2 className="text-xl font-semibold mb-2">O que pretende melhorar/resolver com o uso do SenjeCRM?</h2>
            <select className="w-full h-10 border border-gray-300 rounded-md px-2">
@@ -116,13 +116,13 @@ export default function CompleteProfileSteps () {
             <div className="flex gap-10 w-full justify-between">
                 <button
                 onClick={() => setStep(2)}
-                className="text-red-700 border-red-800 border-2 font-semibold cursor-pointer rounded-md w-full h-10 mt-6">
+                className="text-blue-600 border-blue-6 border-2 font-semibold cursor-pointer rounded-md w-full h-10 mt-6">
                     Voltar
                 </button>
 
                 <button
                 onClick={() => setStep(4)}
-                className="bg-red-700 hover:bg-red-800 text-white font-semibold cursor-pointer rounded-md w-full h-10 mt-6">
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold cursor-pointer rounded-md w-full h-10 mt-6">
                     Continuar
                 </button>
            </div>
@@ -131,7 +131,7 @@ export default function CompleteProfileSteps () {
 
         {step === 4 && (
            <div className="flex p-20 items-start flex-col w-[50%] h-full">
-           <p className="bg-red-800 p-1 px-3 rounded-full text-white font-semibold mb-6">Pass 4 de 4</p>
+           <p className="bg-blue-600 p-1 px-3 rounded-full text-white font-semibold mb-6">Pass 4 de 4</p>
 
            <h2 className="text-xl font-semibold mb-2">Como  nos conheceu?</h2>
            <select className="w-full h-10 border border-gray-300 rounded-md px-2 mb-6">
@@ -154,19 +154,19 @@ export default function CompleteProfileSteps () {
             </label>
             <label className="flex items-center w-full gap-2 mt-6">
                 <input type="checkbox"/>
-                <p className="text-blue-700">Quero ser contactado pelo WhatsApp</p>
+                <p className="text-blue-700 cursor-pointer">Quero ser contactado pelo WhatsApp</p>
             </label>
 
             <div className="flex gap-10 w-full justify-between">
                 <button
                 onClick={() => setStep(3)}
-                className="text-red-700 border-red-800 border-2 font-semibold cursor-pointer rounded-md w-full h-10 mt-6">
+                className="text-blue-600 border-blue-600 border-2 font-semibold cursor-pointer rounded-md w-full h-10 mt-6">
                     Voltar
                 </button>
 
                 <button
                 onClick={() => accessAccount()}
-                className="bg-red-700 hover:bg-red-800 text-white font-semibold cursor-pointer rounded-md w-full h-10 mt-6">
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold cursor-pointer rounded-md w-full h-10 mt-6">
                     Acessar a minha conta
                 </button>
            </div>

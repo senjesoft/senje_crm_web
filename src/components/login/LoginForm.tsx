@@ -36,7 +36,7 @@ export default function LoginForm () {
             <p className="font-semibold mb-2">E-mail</p>
             <input
                 name="email"
-                className="border-2 border-gray-300 rounded-md w-full px-4 py-2 focus:outline-none focus:border-red-800"
+                className="border-2 border-gray-300 rounded-md w-full px-4 py-2 focus:outline-none focus:border-gray-400"
                 placeholder="Insira o seu e-mail"
                 required
                 type="email"
@@ -50,7 +50,7 @@ export default function LoginForm () {
                 name="password"
                 required
                 type="password"
-                className="border-2 border-gray-300 rounded-md w-full px-4 py-2 focus:outline-none focus:border-red-800"
+                className="border-2 border-gray-300 rounded-md w-full px-4 py-2 focus:outline-none focus:border-gray-400"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
             />
@@ -58,7 +58,7 @@ export default function LoginForm () {
 
             <Link href={"#"} className="text-blue-700 flex justify-end">Esqueci minha palavra-passe</Link>
             <button 
-                className="bg-red-700 text-white rounded-md px-4 py-2 hover:bg-red-800 cursor-pointer font-semibold"
+                className="bg-blue-600 text-white rounded-md px-4 py-2 hover:bg-blue-700 cursor-pointer font-semibold"
                 type="submit">
                 Login
             </button>

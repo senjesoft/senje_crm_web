@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState, FormEvent } from "react"
 import { toast } from "sonner";
+import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "../ui/input-otp";
 
 
 export default function SignInForm () {
@@ -40,7 +41,6 @@ export default function SignInForm () {
                 },
                 position: "top-right",
               })
-            
             }
     }
 
@@ -48,7 +48,7 @@ export default function SignInForm () {
 
         <form 
             onSubmit={handleSubmit} 
-            className="p-10 flex flex-col items-center space-y-6 border-2 rounded-lg shadow">
+            className="w-[70%] p-10 flex flex-col items-center space-y-6 border-2 rounded-lg shadow text-[#474747]">
             {step === 1 && (
                 <>
                 <div className="flex justify-start gap-10 items-start">
@@ -56,7 +56,7 @@ export default function SignInForm () {
                         <p className="font-semibold mb-2">Seu Nome</p>
                         <input
                             name="name"
-                            className="border-2 border-gray-300 rounded-md w-72 px-4 py-2 focus:outline-none focus:border-red-800"
+                            className="border-2 border-gray-300 rounded-md w-96 px-4 py-2 focus:outline-none focus:border-gray-400"
                             required
                             type="text"
                             value={name}
@@ -67,18 +67,19 @@ export default function SignInForm () {
                         <p className="font-semibold mb-2">Nome da Empresa</p>
                         <input
                             name="organization"
-                            className="border-2 border-gray-300 rounded-md w-72 px-4 py-2 focus:outline-none focus:border-red-800"
+                            className="border-2 border-gray-300 rounded-md w-96 px-4 py-2 focus:outline-none focus:border-gray-400"
                             required
                             type="text"
                             value={organization}
                             onChange={e => setOrganization(e.target.value)} />
                     </label>
-                </div><div className="flex justify-start gap-10 items-start">
+                </div>
+                <div className="flex justify-start gap-10 items-start">
                         <label>
                             <p className="font-semibold mb-2">NIF (Número de Identificação Fiscal)</p>
                             <input
                                 name="nif"
-                                className="border-2 border-gray-300 rounded-md w-72 px-4 py-2 focus:outline-none focus:border-red-800"
+                                className="border-2 border-gray-300 rounded-md w-96 px-4 py-2 focus:outline-none focus:border-gray-400"
                                 required
                                 type="text"
                                 value={nif}
@@ -92,7 +93,7 @@ export default function SignInForm () {
                                 placeholder="exemplo@empresa.com"
                                 required
                                 type="emal"
-                                className="border-2 border-gray-300 rounded-md w-72 px-4 py-2 focus:outline-none focus:border-red-800"
+                                className="border-2 border-gray-300 rounded-md w-96 px-4 py-2 focus:outline-none focus:border-gray-400"
                                 value={email}
                                 onChange={e => setEmail(e.target.value)} />
                         </label>
@@ -103,7 +104,7 @@ export default function SignInForm () {
                                 name="phone"
                                 required
                                 type="text"
-                                className="border-2 border-gray-300 rounded-md w-72 px-4 py-2 focus:outline-none focus:border-red-800"
+                                className="border-2 border-gray-300 rounded-md w-96 px-4 py-2 focus:outline-none focus:border-gray-400"
                                 value={phone}
                                 onChange={e => setPhone(e.target.value)} />
                         </label>
@@ -114,7 +115,7 @@ export default function SignInForm () {
                                 name="password"
                                 required
                                 type="password"
-                                className="border-2 border-gray-300 rounded-md w-72 px-4 py-2 focus:outline-none focus:border-red-800"
+                                className="border-2 border-gray-300 rounded-md w-96 px-4 py-2 focus:outline-none focus:border-gray-400"
                                 value={password}
                                 onChange={e => setPassword(e.target.value)} />
                         </label>
@@ -127,27 +128,31 @@ export default function SignInForm () {
                                 name="password"
                                 required
                                 type="password"
-                                className="border-2 border-gray-300 rounded-md w-72 px-4 py-2 focus:outline-none focus:border-red-800"
+                                className="border-2 border-gray-300 rounded-md w-96 px-4 py-2 focus:outline-none focus:border-gray-400"
                                 value={confirmPassword}
                                 onChange={e => setConfirmPassword(e.target.value)} />
                         </label>
-                        <label className="flex items-center w-72">
-                            <input type="checkbox" className="mr-2" />
-                            <p className="text-blue-700">Concordo com os <Link href="#">Termos de uso</Link></p>
-                        </label>
+                        <div className="flex w-96 flex-col">
+                            <label className="flex gap-2 mb-2">
+                                <input type="checkbox"/>
+                                <p className="text-blue-600">Concordo com os <Link href="#" className="font-semibold hover:text-blue-700 underline">Termos de uso</Link></p>
+                            </label>
+                            <p>Ao clicar em concordo, aceitas os nossos termos de uso e política de privacidade.</p>
+                        </div>
                     </div>
                     </>
+                    
             )}
 
             {step === 2 && (
                 <>
-                <div className="flex flex-col  justify-center gap-x-2 items-center">
-                    <p>Foi enviado um código de confirmação para o endereço</p><p className="font-semibold">{email}</p>
+                <div className="flex flex-col  justify-center gap-x-2 items-center text-base mb-10">
+                    <p>Foi enviado um código de confirmação para o endereço</p><p className="font-semibold text-gray-500">{email}</p>
                     
                     <p>Digite o mesmo no campo abaixo</p>
                 </div>
                 
-                <input
+               {/* <input
                  name="otp"
                  required
                  type="text"
@@ -155,21 +160,37 @@ export default function SignInForm () {
                  value={otp}
                  onChange={e => setOtp(e.target.value)}
                 
-                />
+                />*/}
+                <InputOTP maxLength={6} value={otp}
+                onChange={(e) => setOtp(e)}>
+                <InputOTPGroup>
+                    <InputOTPSlot index={0} />
+                    <InputOTPSlot index={1} />
+                    <InputOTPSlot index={2} />
+                </InputOTPGroup>
+                <InputOTPSeparator />
+                <InputOTPGroup>
+                    <InputOTPSlot index={3} />
+                    <InputOTPSlot index={4} />
+                    <InputOTPSlot index={5} />
+                </InputOTPGroup>
+                </InputOTP>
                 </>
             )}
 
 
             
             {step === 1 ? (
+                
                 <button 
-                    className="bg-red-700 w-40 text-white rounded-md px-4 p-2 hover:bg-red-800 cursor-pointer font-semibold"
+                    className="bg-blue-600 w-40 text-white rounded-md px-4 p-2 hover:bg-blue-700 cursor-pointer font-semibold mt-10"
                     onClick={handleNextStep}>
                     Seguinte
                 </button>
+               
             ) :
                 <button 
-                    className="bg-red-700 w-40 text-white rounded-md px-4 p-2 hover:bg-red-800 cursor-pointer font-semibold"
+                    className="bg-blue-600 w-40 text-white rounded-md px-4 p-2 hover:bg-blue-700 cursor-pointer font-semibold mt-10"
                     type="submit"
                     //onClick={handleSubmit}
                 >
