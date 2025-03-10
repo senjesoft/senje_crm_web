@@ -14,7 +14,7 @@ export default function LoginForm () {
    
     if(email === "aldprogramer@gmail.com" && password === "123456") {
         // Redirecionar para a dashboard
-         window.location.href = "/dashboard"
+         window.location.href = "/app/dashboard"
 
         } else {
             toast.error("Dados de acesso inválidos", {
